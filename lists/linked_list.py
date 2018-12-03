@@ -1,22 +1,15 @@
-"""The LinkedList code from before is provided below.
-Add three functions to the LinkedList.
-"get_position" returns the element at a certain position.
-The "insert" function will add an element to a particular
-spot in the list.
-"delete" will delete the first element with that
-particular value.
-Then, use "Test Run" and "Submit" to run the test cases
-at the bottom."""
 
 class Element(object):
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
+"""A linked list class."""         
 class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
-        
+
+    """Append will insert an element to the end of the list."""    
     def append(self, new_element):
         current = self.head
         if self.head:
@@ -26,6 +19,7 @@ class LinkedList(object):
         else:
             self.head = new_element
             
+    """"Get Position" returns the element at a certain position."""
     def get_position(self, position):
         counter = 1
         current = self.head
@@ -37,7 +31,8 @@ class LinkedList(object):
             current = current.next
             counter += 1
         return None
-    
+
+    """Insert will add an element to a particular spot in the list."""
     def insert(self, new_element, position):
         counter = 1
         current = self.head
@@ -51,9 +46,9 @@ class LinkedList(object):
         elif position == 1:
             new_element.next = self.head
             self.head = new_element
-    
+
+    """Delete will delete the first element with that particular value."""    
     def delete(self, value):
-        """Delete the first node with a given value."""
         current = self.head
         previous = None
         while current.value != value and current.next:

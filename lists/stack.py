@@ -1,20 +1,14 @@
-"""Add a couple methods to our LinkedList class,
-and use that to implement a Stack.
-You have 4 functions below to fill in:
-insert_first, delete_first, push, and pop.
-Think about this while you're implementing:
-why is it easier to add an "insert_first"
-function than just use "append"?"""
-
 class Element(object):
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
+"""A linked list class."""        
 class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
-        
+
+    """Append will insert an element to the end of the list."""          
     def append(self, new_element):
         current = self.head
         if self.head:
@@ -24,13 +18,13 @@ class LinkedList(object):
         else:
             self.head = new_element
 
+    """Insert new element as the head of the LinkedList"""
     def insert_first(self, new_element):
-        "Insert new element as the head of the LinkedList"
         new_element.next = self.head
         self.head = new_element
 
+    """Delete the first (head) element in the LinkedList as return it"""
     def delete_first(self):
-        "Delete the first (head) element in the LinkedList as return it"
         if self.head:
             deleted = self.head
             temp = deleted.next
@@ -39,6 +33,7 @@ class LinkedList(object):
         else:
             return None
 
+"""A stack class using a linked list.""" 
 class Stack(object):
     def __init__(self,top=None):
         self.ll = LinkedList(top)

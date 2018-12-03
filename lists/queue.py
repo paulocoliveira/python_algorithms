@@ -1,21 +1,19 @@
-"""Make a Queue class using a list!
-Hint: You can use any Python list method
-you'd like! Try to write each one in as 
-few lines as possible.
-Make sure you pass the test cases too!"""
-
 from collections import deque
 
+"""A Queue class using a list!"""
 class Queue:
     def __init__(self, head=None):
         self.storage = [head]
 
+    """Enqueue will insert an element in the end of the queue."""
     def enqueue(self, new_element):
         self.storage.append(new_element)
 
+    """Peek will read the first element of the queue."""
     def peek(self):
         return self.storage[0]
 
+    """Dequeue will remove the first element of the queue."""
     def dequeue(self):
         return self.storage.pop(0)
     
